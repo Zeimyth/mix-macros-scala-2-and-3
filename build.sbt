@@ -14,6 +14,8 @@ lazy val testframework = project
   .dependsOn(shared, scala2macros)
   .settings(
     name := "testframework",
+    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.10",
+    libraryDependencies += "com.typesafe.scala-logging" % "scala-logging_3" % "3.9.4",
   )
 
 lazy val shared = project
@@ -27,10 +29,14 @@ lazy val app2 = project
     name := "mix-macros-demo-scala2",
     scalaVersion := scala213,
     scalacOptions += "-Ytasty-reader",
+    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.10",
+    libraryDependencies += "com.typesafe.scala-logging" % "scala-logging_3" % "3.9.4",
   )
 
 lazy val app3 = project
   .dependsOn(testframework)
   .settings(
-    name := "mix-macros-demo-scala3"
+    name := "mix-macros-demo-scala3",
+    libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.10",
+    libraryDependencies += "com.typesafe.scala-logging" % "scala-logging_3" % "3.9.4",
   )

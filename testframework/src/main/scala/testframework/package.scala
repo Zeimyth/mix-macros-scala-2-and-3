@@ -1,4 +1,8 @@
+import com.typesafe.scalalogging.Logger
+
 package object testframework:
+
+  private def logger = Logger("testframework")
 
   import scala.language.experimental.macros
 
@@ -10,3 +14,5 @@ package object testframework:
 
   def actuallyAnInt: Any = macro Scala2Macros.Whitebox.actuallyAnIntImpl
   transparent inline def actuallyAnInt: Any = ${ Macros.actuallyAnIntImpl }
+
+  def log(str: Any): Unit = logger.info(str.toString)
