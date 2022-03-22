@@ -1,8 +1,10 @@
 import com.typesafe.scalalogging.Logger
+// import org.log4s.getLogger
 
 package object testframework:
 
   private def logger = Logger("testframework")
+  // private def logger = getLogger("testframework")
 
   import scala.language.experimental.macros
 
